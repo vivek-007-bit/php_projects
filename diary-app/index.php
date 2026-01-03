@@ -456,7 +456,7 @@
                 <h5>Lets Connect</h5>
                 <ul class="list-unstyled text-small">
                     <li><a class="link-secondary text-decoration-none" href="contact.php">Contact Us</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">Github</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="https://github.com/vivek-007-bit/php_projects/tree/main/diary-app">Github</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
@@ -495,4 +495,5 @@
 
 
 </html>
+
 
