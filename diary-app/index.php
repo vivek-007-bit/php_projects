@@ -20,7 +20,7 @@
         sizes="180x180">
 
     <meta name="theme-color" content="#712cf9">
-    <link rel="shortcut icon" href="/diary-app/assets/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
 
     <style>
         .bd-placeholder-img {
@@ -492,5 +492,6 @@
         });
     </script>
 </body>
+
 
 </html>
