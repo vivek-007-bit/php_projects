@@ -344,7 +344,7 @@
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Data Security</h5>
             </div>
-            <p class="mb-1">All entries are stored securely using encryption.</p>
+            <p class="mb-1">Data is stored securely using encryption.</p>
             <p>Your account is protected with password authentication.</p>
             <p>We do not share or sell your personal information to third parties.</p>
         </a>
@@ -495,6 +495,7 @@
 
 
 </html>
+
 
 
 
