@@ -1,58 +1,58 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
+// Import PHPMailer classes via Composer autoload
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+require __DIR__ . '/vendor/autoload.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$msg = $_POST['query'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-//Load Composer's autoloader (created by composer, not included with PHPMailer)
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-require 'PHPMailer/Exception.php';
+    // Sanitize user input
+    $name  = htmlspecialchars($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $msg   = htmlspecialchars($_POST['query']);
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer(true);
 
-try {
-    //Server settings
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'viveksharma40649@gmail.com';                     //SMTP username
-    $mail->Password   = 'teqd istf ljrs fchl';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    try {
+        // SMTP server settings
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = getenv('MAIL_USERNAME'); // Set in Render environment
+        $mail->Password   = getenv('MAIL_PASSWORD'); // App Password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
 
-    //Recipients
-    $mail->setFrom('viveksharma40649@gmail.com', 'Contact Form');
-    $mail->addAddress('viveksharma40649@gmail.com', 'Diary-App');     //Add a recipient
+        // Sender and recipient
+        $mail->setFrom(getenv('MAIL_USERNAME'), 'Contact Form');
+        $mail->addAddress(getenv('MAIL_USERNAME'), 'Diary-App');
 
+        // Email content
+        $mail->isHTML(true);
+        $mail->Subject = 'Email From Diary-App';
+        $mail->Body    = "
+            <strong>Sender Name:</strong> {$name} <br>
+            <strong>Sender Email:</strong> {$email} <br>
+            <strong>Message:</strong> {$msg}
+        ";
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Email From Diary-App';
-    $mail->Body    = "Sender Name - $name <br> Sender Email - $email <br> Message - $msg";
-
-    $mail->send();
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Email has been sent <strong>Successfully</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
-} catch (Exception $e) {
-    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-             <strong>Error.</strong> Email Couldnot be sent
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-           </div>'; 
+        $mail->send();
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Email has been sent <strong>Successfully</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+    } catch (Exception $e) {
+        error_log("Mail Error: " . $mail->ErrorInfo);
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                 <strong>Error.</strong> Email could not be sent. Please try again later.
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>'; 
     }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,3 +99,4 @@ try {
 
 
 </html>
+
