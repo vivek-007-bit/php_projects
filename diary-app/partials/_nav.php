@@ -27,16 +27,17 @@
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/login.php">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/signup.php">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/#privacy-policy">Privacy Policy</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/contact.php">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/diary-app/#faqs">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login.php">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/signup.php">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#privacy-policy">Privacy Policy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact.php">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#faqs">FAQs</a></li>
 
                     </ul>
                 </div>
             </div>
         </div>
+
     </nav>
