@@ -280,7 +280,7 @@
                 <h1 class="display-3 fw-bold">Designed for Dreamers</h1>
                 <h3 class="fw-normal text-muted mb-3">Turn your thoughts into timeless stories</h3>
                 <div class="d-flex gap-3 justify-content-center align-items-center">
-                    <a class="btn btn-danger btn-lg" href="app/index.php">Get Started &rarr;</a>
+                    <a class="btn btn-danger btn-lg" href="/app/index.php">Get Started &rarr;</a>
                 </div>
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -495,3 +495,4 @@
 
 
 </html>
+
