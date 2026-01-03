@@ -61,14 +61,14 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
 
-    <link rel="stylesheet" href="/diary-app/css/style.css">
-    <link rel="stylesheet" href="/diary-app/css/responsive.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="/diary-app/assets/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
 
 
 </head>
@@ -96,5 +96,6 @@ try {
         crossorigin="anonymous"></script>
 </body>
 </body>
+
 
 </html>
