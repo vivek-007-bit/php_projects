@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: /diary-app/login.php");
+    header("Location: /login.php");
     exit();
 }
 
@@ -319,5 +319,6 @@ if (isset($_POST['delete_id'])) {
 
         <script src="script.js"></script>
 </body>
+
 
 </html>
