@@ -470,7 +470,7 @@
             <div class="col-6 col-md">
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary text-decoration-none" href="#">Fetures</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Features</a></li>
                     <li><a class="link-secondary text-decoration-none" href="#">Privacy Policy</a></li>
                     <li><a class="link-secondary text-decoration-none" href="#">FAQs</a></li>
                 </ul>
@@ -495,5 +495,6 @@
 
 
 </html>
+
 
 
