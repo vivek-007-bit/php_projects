@@ -24,7 +24,7 @@ if (isset($_POST['add_entry'])) {
     echo"note added successfully";
     
     // Redirect to same page to prevent resubmission
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: /app/");
     exit();
 }
 
@@ -41,7 +41,7 @@ if (isset($_POST['add_entry'])) {
 
     mysqli_query($conn, $sql);
 
-    header("Location: index.php");
+    header("Location: /app/");
     exit();
     }
 
@@ -57,7 +57,7 @@ if (isset($_POST['delete_id'])) {
     echo"note deleted successfully";
 
     // Redirect to prevent resubmission
-    header("Location: ".$_SERVER['PHP_SELF']);
+    header("Location: /app/");
     exit();
 }
 
@@ -322,4 +322,5 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
