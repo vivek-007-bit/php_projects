@@ -5,9 +5,9 @@ use PHPMailer\PHPMailer\SMTP;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Sanitize inputs
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $msg   = htmlspecialchars(trim($_POST['query']));
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $msg   = $_POST['query'];
 
     // Load PHPMailer classes
     require __DIR__ . '/PHPMailer/PHPMailer.php';
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isHTML(true);
         $mail->Subject = 'Email From Diary-App';
         $mail->Body    = "
+            <strong>Sender Name:</strong> {$name}<br><br>
             <strong>Sender Email:</strong> {$email}<br><br>
             <strong>Message:</strong><br>{$msg}
         ";
@@ -103,5 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </html>
+
 
 
