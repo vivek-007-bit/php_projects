@@ -3,11 +3,19 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+// Load environment variables from .env manually
+$envLines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+foreach ($envLines as $line) {
+    if (strpos(trim($line), '#') === 0) continue; 
+    list($key, $value) = explode('=', $line, 2);
+    $_ENV[trim($key)] = trim($value);
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $msg   = $_POST['query'];
+    $name = htmlspecialchars($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $msg   = htmlspecialchars($_POST['query']);
 
     // Load PHPMailer classes
     require __DIR__ . '/PHPMailer/PHPMailer.php';
@@ -21,14 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = getenv('MAIL_USERNAME'); // Render ENV
-        $mail->Password   = getenv('MAIL_PASSWORD'); // Gmail App Password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = 465;
+        $mail->Username   = $_ENV['MAIL_USERNAME']; // From .env
+        $mail->Password   = $_ENV['MAIL_PASSWORD']; // Gmail App Password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
 
         // Email headers
-        $mail->setFrom(getenv('MAIL_USERNAME'), 'Contact Form');
-        $mail->addAddress(getenv('MAIL_USERNAME'), 'Diary-App');
+        $mail->setFrom($_ENV['MAIL_USERNAME'], $_ENV['MAIL_FROM_NAME']);
+        $mail->addAddress($_ENV['MAIL_TO'], 'Diary-App');
 
         // Content
         $mail->isHTML(true);
@@ -104,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </html>
+
 
 
 
