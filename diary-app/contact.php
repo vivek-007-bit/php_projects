@@ -1,57 +1,61 @@
 <?php
-// Import PHPMailer classes via Composer autoload
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-require __DIR__ . '/vendor/autoload.php';
+use PHPMailer\PHPMailer\SMTP;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Sanitize user input
-    $name  = htmlspecialchars($_POST['name']);
+    // Sanitize inputs
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $msg   = htmlspecialchars($_POST['query']);
+    $msg   = htmlspecialchars(trim($_POST['query']));
 
-    // Create a new PHPMailer instance
+    // Load PHPMailer classes
+    require __DIR__ . '/PHPMailer/PHPMailer.php';
+    require __DIR__ . '/PHPMailer/SMTP.php';
+    require __DIR__ . '/PHPMailer/Exception.php';
+
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP server settings
+        // SMTP settings
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = getenv('MAIL_USERNAME'); // Set in Render environment
-        $mail->Password   = getenv('MAIL_PASSWORD'); // App Password
+        $mail->Username   = getenv('MAIL_USERNAME'); // Render ENV
+        $mail->Password   = getenv('MAIL_PASSWORD'); // Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
-        // Sender and recipient
+        // Email headers
         $mail->setFrom(getenv('MAIL_USERNAME'), 'Contact Form');
         $mail->addAddress(getenv('MAIL_USERNAME'), 'Diary-App');
 
-        // Email content
+        // Content
         $mail->isHTML(true);
         $mail->Subject = 'Email From Diary-App';
         $mail->Body    = "
-            <strong>Sender Name:</strong> {$name} <br>
-            <strong>Sender Email:</strong> {$email} <br>
-            <strong>Message:</strong> {$msg}
+            <strong>Sender Email:</strong> {$email}<br><br>
+            <strong>Message:</strong><br>{$msg}
         ";
 
         $mail->send();
+
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Email has been sent <strong>Successfully</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                Email sent successfully.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
               </div>';
+
     } catch (Exception $e) {
-        error_log("Mail Error: " . $mail->ErrorInfo);
-        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                 <strong>Error.</strong> Email could not be sent. Please try again later.
-                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>'; 
+        error_log("Mailer Error: " . $mail->ErrorInfo);
+
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Email could not be sent.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              </div>';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,4 +103,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </html>
+
 
