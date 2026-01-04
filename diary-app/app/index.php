@@ -42,7 +42,7 @@ if (isset($_POST['add_entry'])) {
     mysqli_query($conn, $sql);
 
     header("Location: index.php");
-    exit;
+    exit();
     }
 
 
@@ -72,14 +72,14 @@ if (isset($_POST['delete_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome: <?php echo $_SESSION['name']; ?> </title>
 
-    <link rel="stylesheet" href="/diary-app/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/diary-app/css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="/diary-app/assets/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
 
 
 </head>
@@ -322,3 +322,4 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
