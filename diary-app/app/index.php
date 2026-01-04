@@ -21,7 +21,7 @@ if (isset($_POST['add_entry'])) {
     $sql = "INSERT INTO entries (username, title, description) VALUES ('$username', '$title', '$description')";
 
     $result = mysqli_query($conn, $sql);
-    echo"note added successfully";
+    //echo"note added successfully";
     
     // Redirect to same page to prevent resubmission
     header("Location: /app/");
@@ -54,7 +54,7 @@ if (isset($_POST['delete_id'])) {
 
     $delete_sql = "DELETE FROM entries WHERE id = '$delete_id' AND username = '$username'";
     $result = mysqli_query($conn, $delete_sql);
-    echo"note deleted successfully";
+    //echo"note deleted successfully";
 
     // Redirect to prevent resubmission
     header("Location: /app/");
@@ -322,6 +322,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
