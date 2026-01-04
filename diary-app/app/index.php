@@ -199,7 +199,7 @@ if (isset($_POST['delete_id'])) {
                     id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div class="offcanvas-header">
                         <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-                            <img src="/diary-app/assets/favicon.png" class="logo">
+                            <img src="../assets/favicon.png" class="logo">
                             MyDiary
                         </h1>
                         <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas"
@@ -322,5 +322,6 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
