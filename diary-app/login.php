@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['name'] = $row['name'];
             $_SESSION['username'] = $row['username'];
 
-            header("Location: /diary-app/app/index.php");
+            header("Location: /app/index.php");
             exit();
         } else {
             echo "Invalid Credentials";
@@ -73,5 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         crossorigin="anonymous"></script>
 </body>
 </body>
+
 
 </html>
