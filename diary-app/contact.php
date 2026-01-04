@@ -4,12 +4,13 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
 // Load environment variables from .env manually
-$envLines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+/*$envLines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 foreach ($envLines as $line) {
     if (strpos(trim($line), '#') === 0) continue; 
     list($key, $value) = explode('=', $line, 2);
     $_ENV[trim($key)] = trim($value);
 }
+*/
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -112,6 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </html>
+
 
 
 
