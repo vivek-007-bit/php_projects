@@ -212,7 +212,7 @@ if (isset($_POST['delete_id'])) {
                             <?php echo $_SESSION['username']; ?></h2></li>
                             <br><br>
                             <li><a href="logout.php" style="text-decoration: none; color: red;">Logout</a></li>
-                            <li><a href="/contact.php">Logout</a></li>
+                            <li><a href="/contact.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -323,6 +323,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
