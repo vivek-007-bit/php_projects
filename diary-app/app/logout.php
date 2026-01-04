@@ -5,7 +5,8 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to login page
-header("Location: /diary-app/");
+header("Location: /login.php");
 exit();
+
 
 ?>
