@@ -1,17 +1,13 @@
 <?php
+$servername = getenv("DB_HOST");
+$username   = getenv("DB_USER");
+$password   = getenv("DB_PASS");
+$database   = getenv("DB_NAME");
+$port       = getenv("DB_PORT");
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$database = "diary";
+$conn = mysqli_connect($servername, $username, $password, $database, $port);
 
-//connect the server
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-//die if connection is not successfull
 if (!$conn) {
-    die("Sorry we failed to connect: " .mysqli_connect_error());
+    die("Database connection failed: " . mysqli_connect_error());
 }
 ?>
-
-
