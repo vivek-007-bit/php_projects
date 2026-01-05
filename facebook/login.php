@@ -87,12 +87,14 @@ $showError = false;
                     Forget Password?
                     </a>
             </div>
+            <!--
             <div class="form-check my-3">
                 <input class="form-check-input" type="checkbox" name="remember" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                     Remember Me?
                 </label>
             </div>
+             -->
             <button type="submit" class="btn btn-primary mb-3">Login</button>
             <div class="mb-3">
                 <div class="form-text fs-6">
@@ -107,5 +109,6 @@ $showError = false;
     </div>
     <script src="libs/bootstrap.js"></script>
 </body>
+
 
 </html>
