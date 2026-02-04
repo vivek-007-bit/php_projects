@@ -1,69 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
-// Load environment variables from .env manually
-/*$envLines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-foreach ($envLines as $line) {
-    if (strpos(trim($line), '#') === 0) continue; 
-    list($key, $value) = explode('=', $line, 2);
-    $_ENV[trim($key)] = trim($value);
-}
-*/
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $name = htmlspecialchars($_POST['name']);
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $msg   = htmlspecialchars($_POST['query']);
-
-    // Load PHPMailer classes
-    require __DIR__ . '/PHPMailer/PHPMailer.php';
-    require __DIR__ . '/PHPMailer/SMTP.php';
-    require __DIR__ . '/PHPMailer/Exception.php';
-
-    $mail = new PHPMailer(true);
-
-    try {
-        // SMTP settings
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $_ENV['MAIL_USERNAME']; // From .env
-        $mail->Password   = $_ENV['MAIL_PASSWORD']; // Gmail App Password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-
-        // Email headers
-        $mail->setFrom($_ENV['MAIL_USERNAME'], $_ENV['MAIL_FROM_NAME']);
-        $mail->addAddress($_ENV['MAIL_TO'], 'Diary-App');
-
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = 'Email From Diary-App';
-        $mail->Body    = "
-            <strong>Sender Name:</strong> {$name}<br><br>
-            <strong>Sender Email:</strong> {$email}<br><br>
-            <strong>Message:</strong><br>{$msg}
-        ";
-
-        $mail->send();
-
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Email sent successfully.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              </div>';
-
-    } catch (Exception $e) {
-        error_log("Mailer Error: " . $mail->ErrorInfo);
-
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Email could not be sent.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              </div>';
-    }
-}
 ?>
 
 
@@ -113,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </html>
+
 
 
 
