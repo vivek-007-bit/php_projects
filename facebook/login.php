@@ -72,15 +72,15 @@ $showError = false;
             <h1 class="mb-4 text-center fw-bold">Login</h1>
             <div class="mb-3">
                 <label for="username" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="username" class="form-label">User Name</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="form-text fs-6">
                 <a href="forgetPassword.php" class="link-primary fw-semibold text-decoration-none">
@@ -112,3 +112,4 @@ $showError = false;
 
 
 </html>
+
