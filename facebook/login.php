@@ -82,12 +82,14 @@ $showError = false;
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+        
+            <!--
             <div class="form-text fs-6">
                 <a href="forgetPassword.php" class="link-primary fw-semibold text-decoration-none">
                     Forget Password?
                     </a>
             </div>
-            <!--
+
             <div class="form-check my-3">
                 <input class="form-check-input" type="checkbox" name="remember" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
@@ -95,6 +97,7 @@ $showError = false;
                 </label>
             </div>
              -->
+            
             <button type="submit" class="btn btn-primary mb-3">Login</button>
             <div class="mb-3">
                 <div class="form-text fs-6">
@@ -112,4 +115,5 @@ $showError = false;
 
 
 </html>
+
 
