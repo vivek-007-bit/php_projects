@@ -207,10 +207,9 @@ if (isset($_POST['delete_id'])) {
                     </div>
                     <div class="offcanvas-body" style="background-color: rgb(165, 248, 252);">
                         <ul class="sidebar-links">
-                            <li><h2 style="color: black;">Welcome:
-                                <br>
-                            <?php echo $_SESSION['username']; ?></h2></li>
-                            <br><br>
+                            <li><h3 style="color: black;">Welcome:
+                            <?php echo $_SESSION['name']; ?></h3></li>
+                            <li><small class="text-muted"><?php echo $_SESSION['username']; ?></small></li>
                             <li><a href="logout.php" style="text-decoration: none; color: red;">Logout</a></li>
                             <li><a href="/contact.php">Contact Us</a></li>
                         </ul>
@@ -323,6 +322,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
