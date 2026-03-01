@@ -399,36 +399,8 @@
             <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. What happens if I forget my password?
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        You can reset your password anytime through the “Forgot Password” option on the login
-                        page.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        4. Can I delete my account and data?
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        Yes. You have full control—when you delete your account, all your entries are
-                        permanently erased from our servers.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        5. Do you read or use my journal entries?
+                        3. Do you read or use my journal entries?
                     </button>
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -495,6 +467,7 @@
 
 
 </html>
+
 
 
 
