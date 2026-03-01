@@ -221,15 +221,8 @@ if (isset($_POST['delete_id'])) {
 
                 <div class="app-top d-flex">
                         <ul>
-                            <li class="d-flex flex-direction-row justify-content-center align-items-center">
-                                <img src="../assets/favicon.png" class="logo">
-                                <!--<h1>MyDiary</h1>
-                                <div class="spinner-grow text-primary" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>-->
-                            </li>
-
                             <li>
+                                <img src="../assets/favicon.png" class="logo">
                                 <input type="search" name="searchBar" placeholder="Search an Entry" id="searchBar">
                             </li>
                         </ul>
@@ -322,6 +315,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
