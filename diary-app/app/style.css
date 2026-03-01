@@ -76,6 +76,7 @@ body {
     background-color: rgb(255, 255, 255);
     padding-top: 140px;
     overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
@@ -104,5 +105,6 @@ body {
 
 
 }
+
 
 
