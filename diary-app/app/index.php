@@ -209,9 +209,10 @@ if (isset($_POST['delete_id'])) {
                         <ul class="sidebar-links">
                             <li><h3 style="color: black;">Welcome:
                             <?php echo $_SESSION['name']; ?></h3></li>
-                            <li><small class="text-muted"><?php echo $_SESSION['username']; ?></small></li>
+                            <li><small class="text-muted">UserName: <?php echo $_SESSION['username']; ?></small></li>
+                            <br><br>
                             <li><a href="logout.php" style="text-decoration: none; color: red;">Logout</a></li>
-                            <li><a href="/contact.php">Contact Us</a></li>
+                            <li><a href="/contact.php"  style="text-decoration: none; color: black;">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -315,6 +316,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
