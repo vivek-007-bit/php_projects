@@ -275,7 +275,7 @@
 
     <main>
         <!--Hero Section -->
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary" style="z-index:10;">
             <div class="col-md-6 p-lg-5 mx-auto my-5">
                 <h1 class="display-3 fw-bold">Designed for Dreamers</h1>
                 <h3 class="fw-normal text-muted mb-3">Turn your thoughts into timeless stories</h3>
@@ -319,7 +319,7 @@
 
                 </div>
             </div>
-            <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div class="my-3 py-3">
                     <h2 class="display-5">Orgnized Entries</h2>
                     <p class="lead">And an even wittier subheading.</p>
@@ -495,6 +495,7 @@
 
 
 </html>
+
 
 
 
