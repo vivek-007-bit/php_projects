@@ -224,10 +224,10 @@ if (isset($_POST['delete_id'])) {
                         <ul>
                             <li class="d-flex flex-direction-row justify-content-center align-items-center">
                                 <img src="../assets/favicon.png" class="logo">
-                                <h1>MyDiary</h1>
+                                <!--<h1>MyDiary</h1>
                                 <div class="spinner-grow text-primary" role="status">
                                     <span class="visually-hidden">Loading...</span>
-                                </div>
+                                </div>-->
                             </li>
 
                             <li>
@@ -323,6 +323,7 @@ if (isset($_POST['delete_id'])) {
 
 
 </html>
+
 
 
 
