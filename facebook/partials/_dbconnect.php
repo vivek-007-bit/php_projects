@@ -1,15 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "facebook";
+$hostname = getenv("hostname");
+$username   = getenv("username");
+$password   = getenv("password");
+$database   = getenv("database");
+$port       = getenv("port");
 
-//connect the server
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($hostname, $username, $password, $database, $port);
 
-//die if connection is not successfull
 if (!$conn) {
-    die("Sorry we failed to connect: " .mysqli_connect_error());
+    die("Database connection failed: " . mysqli_connect_error());
 }
 ?>
