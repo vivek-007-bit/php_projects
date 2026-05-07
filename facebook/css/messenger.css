@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.contact-list{
+    width: 20rem;
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+.chats-container{
+    width: 80rem; 
+    height: 88vh; 
+    position: absolute;
+    top: 0;
+}
+
+.messages{
+    height: 40%;
+    overflow-y: scroll;
+}
