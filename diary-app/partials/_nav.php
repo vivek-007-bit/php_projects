@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="/login.php">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="/signup.php">Sign Up</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#privacy-policy">Privacy Policy</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/contact.php">Contact</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="/contact.php">Contact</a></li>--->
                         <li class="nav-item"><a class="nav-link" href="/#faqs">FAQs</a></li>
 
                     </ul>
