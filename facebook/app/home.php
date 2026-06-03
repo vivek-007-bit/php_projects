@@ -15,7 +15,7 @@
 
 
      //shared post 
-     $gateway = "/facebook";
+     $gateway = "https://facebook-316k.onrender.com";
 
      $shared_post = "";
     if(isset($_GET['post_id'])){
